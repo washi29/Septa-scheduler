@@ -4,7 +4,7 @@ let env = require("../env.json");
 let baseUrl = env["base_api_url"];
 
 let app = express();
-let port = 3000;
+let port = process.env.PORT || 3000;
 let hostname = "localhost";
 
 app.use(express.static("public"));
@@ -56,6 +56,6 @@ app.get("/next",function(req,res){
 
 
 
-app.listen(process.env.PORT || port, hostname, () => {
+app.listen( port, hostname, () => {
     console.log(`Listening at: http://${hostname}:${port}`);
 });
