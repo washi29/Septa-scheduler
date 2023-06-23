@@ -56,6 +56,6 @@ app.get("/next",function(req,res){
 
 
 
-app.listen(port, hostname, () => {
+app.listen(process.env.PORT || port, hostname, () => {
     console.log(`Listening at: http://${hostname}:${port}`);
 });
